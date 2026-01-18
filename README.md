@@ -40,4 +40,4 @@ Dit project is volledig opgebouwd volgens objectgeoriënteerd programmeren en mo
 ## Instructies om te spelen
 1. Clone de repository:  
 ```bash
-git clone https://github.com/<jouw-gebruikersnaam>/Platform_Game_Kenuja.git
+git clone https://github.com/Kenu-94/Platform_Game_Kenuja.git
