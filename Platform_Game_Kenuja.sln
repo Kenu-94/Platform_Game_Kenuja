@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platform_Game_Kenuja", "Platform-Game-Kenuja\Platform_Game_Kenuja.csproj", "{97384AD2-2A7B-441A-8AD2-7B6C9913A450}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97384AD2-2A7B-441A-8AD2-7B6C9913A450}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97384AD2-2A7B-441A-8AD2-7B6C9913A450}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97384AD2-2A7B-441A-8AD2-7B6C9913A450}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97384AD2-2A7B-441A-8AD2-7B6C9913A450}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {849827D5-1CD2-458F-BA18-957C75E317C0}
+	EndGlobalSection
+EndGlobal
