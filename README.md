@@ -41,7 +41,7 @@ Dit project is volledig opgebouwd volgens objectgeoriënteerd programmeren en mo
 1. Clone de repository:  
 ```bash
 git clone https://github.com/Kenu-94/Platform_Game_Kenuja.git
-
+```bash
 2. Open het project in Visual Studio.
 3. Druk op Run of F5 om het spel te starten.
 4. Gebruik de pijltjestoetsen om te bewegen en Enter om menu-opties te bevestigen.
