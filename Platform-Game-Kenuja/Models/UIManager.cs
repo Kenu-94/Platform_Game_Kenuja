@@ -2,13 +2,14 @@
 using Microsoft.Xna.Framework.Graphics;
 using static System.Net.Mime.MediaTypeNames;
 
-public class UIManager
+public class UIManager 
 {
     private SpriteFont _font;
     private Texture2D _menuBackground;
     private Texture2D _gameEndBackground;
-    private float _pressAlpha = 1f;
-    private float _alphaDirection = -1f;
+    private float _pressAlpha = 1f; //Doorzichtigheid v/d tekst
+    private float _alphaDirection = -1f; //Faden omhoog/omlaag!
+    //Beide samen (_pressAlpha en _alphadirection) zorgen voor knipperend effect!
 
     public void Initialize(SpriteFont font, Texture2D menuBg, Texture2D gameEndBg)
     {
@@ -19,9 +20,6 @@ public class UIManager
     {
         spriteBatch.Draw(_menuBackground, new Rectangle(0, 0, graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight), Color.White);
         spriteBatch.DrawString(_font, "PLATFORM ADVENTURE", new Vector2(180, 80), Color.Black, 0f, Vector2.Zero, 2.1f, SpriteEffects.None, 0f);
-        spriteBatch.DrawString(_font, "PLATFORM ADVENTURE",
-                new Vector2(180, 80), Color.Black, 0f, Vector2.Zero, 2.1f, SpriteEffects.None, 0f);
-
         spriteBatch.DrawString(_font, "CONTROLS:", new Vector2(200, 150), Color.Yellow);
         spriteBatch.DrawString(_font, "A = Attack", new Vector2(200, 180), Color.White);
         spriteBatch.DrawString(_font, "UP = Jump", new Vector2(200, 210), Color.White);

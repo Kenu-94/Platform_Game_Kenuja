@@ -19,7 +19,7 @@ namespace Platform_Game_Kenuja.Models
 
         public override void Update(GameTime gameTime)
         {
-            // blijft stil: dit is een valstrik (bijv. spikes op de grond)
+            // blijft stil: dit is een valstrik !
         }
 
         public override void Draw(SpriteBatch spriteBatch)

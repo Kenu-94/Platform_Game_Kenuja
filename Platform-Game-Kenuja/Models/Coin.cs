@@ -13,7 +13,7 @@ namespace Platform_Game_Kenuja.Models
         private float pulseStrength = 0.01f;  // zeer kleine animatie
         private float animationTimer = 0f;
 
-        public Rectangle BoundingBox =>
+        public Rectangle BoundingBox =>   //Collisions!
             new Rectangle(
                 (int)Position.X,
                 (int)Position.Y,
@@ -24,23 +24,26 @@ namespace Platform_Game_Kenuja.Models
         public void Update(GameTime gameTime)
         {
             animationTimer += (float)gameTime.ElapsedGameTime.TotalSeconds * 3f;
+            //Deze methode verhoogt de animatietimer op basis van de verstreken tijd, zodat de animatie even snel blijft lopen ongeacht de FPS. (Frames Per Second)
+            //ElapsedGametime: Time sinds het laatste frame!
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            // kleine zachte pulse, NIET te groot maken
+            
             float scale = baseScale + (float)Math.Sin(animationTimer) * pulseStrength;
+            //Deze lijn zorgt ervoor dat de coin rustig groter en kleiner wordt, alsof hij ademt.
 
             spriteBatch.Draw(
-                Texture,
-                Position,
-                null,
-                Color.White,
-                0f,
-                Vector2.Zero,
-                scale,
-                SpriteEffects.None,
-                0f
+                Texture, //Plaatje je tekent
+                Position, //Positie op het scherm
+                null, //Hele afbeelding
+                Color.White, //Normale kleur
+                0f, //Rotatie: Niet draaien
+                Vector2.Zero, //Draaipunt Links boven
+                scale, 
+                SpriteEffects.None,//Gn spiegeling
+                0f //Wat voor/achter ligt
             );
         }
     }

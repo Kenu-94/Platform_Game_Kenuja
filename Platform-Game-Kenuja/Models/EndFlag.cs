@@ -8,8 +8,6 @@ namespace Platform_Game_Kenuja.Models
         public Texture2D Texture;
         public Vector2 Position;
         public float Scale = 0.10f;
-
-        // 👉 Deze miste jij
         public bool Activated = false;
 
         public Rectangle BoundingBox =>

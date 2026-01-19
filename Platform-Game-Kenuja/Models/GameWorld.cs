@@ -28,14 +28,15 @@ public class GameWorld : ILevelManager
         {
             new Platform { Texture = PlatformTexture, Position = new Vector2(0,400), Width=1200, Height=70 },
             new Platform { Texture = PlatformTexture, Position = new Vector2(200,300), Width=100, Height=40 },
-            new Platform { Texture = PlatformTexture, Position = new Vector2(350,250), Width=100, Height=40 }
+            new Platform { Texture = PlatformTexture, Position = new Vector2(350,250), Width=100, Height=40 },
+            new Platform { Texture = PlatformTexture, Position = new Vector2(500,300), Width=100, Height=40 }
         };
 
         AddCoinLine(120, 260, 25);
         AddCoinLine(50, 370, 15);
 
-        Enemies.Add(new PatrolEnemy(EnemyTexture, new Vector2(300, 360), 250, 450));
-        Enemies.Add(new FastEnemy(EnemyTexture, new Vector2(500, 360), 450, 650));
+        Enemies.Add(new PatrolEnemy(EnemyTexture, new Vector2(300, 360), 180, 450));
+        Enemies.Add(new FastEnemy(EnemyTexture, new Vector2(500, 360), 300, 650));
         Enemies.Add(new TrapEnemy(EnemyTexture, new Vector2(480, 360)));
 
         EndFlag = new EndFlag
@@ -76,7 +77,7 @@ public class GameWorld : ILevelManager
         // Enemies (max 1 TrapEnemy)
         Enemies.Add(new PatrolEnemy(EnemyTexture, new Vector2(300, 410), 200, 500));
         Enemies.Add(new FastEnemy(EnemyTexture, new Vector2(700, 160), 620, 820));
-        Enemies.Add(new TrapEnemy(EnemyTexture, new Vector2(500, 180))); // 1 valstrik
+        Enemies.Add(new TrapEnemy(EnemyTexture, new Vector2(450, 200))); // 1 valstrik
 
         // EndFlag voor level einde
         EndFlag = new EndFlag
@@ -96,7 +97,7 @@ public class GameWorld : ILevelManager
         {
             if (mp.MoveRight)
             {
-                mp.Plat.Position.X += mp.Speed * dt;
+                mp.Plat.Position.X += mp.Speed * dt; //dt: tijd sinds vorige frame
                 if (mp.Plat.Position.X >= mp.Right)
                     mp.MoveRight = false;
             }
@@ -120,7 +121,7 @@ public class GameWorld : ILevelManager
     private void AddCoinLine(int startX, int y, int count)
     {
         for (int i = 0; i < count; i++)
-            Coins.Add(new Coin { Texture = CoinTexture, Position = new Microsoft.Xna.Framework.Vector2(startX + i * 30, y) });
+            Coins.Add(new Coin { Texture = CoinTexture, Position = new Vector2(startX + i * 30, y) });
     }
 
     public void Reset()

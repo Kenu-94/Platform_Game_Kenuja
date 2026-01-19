@@ -25,9 +25,11 @@ namespace Platform_Game_Kenuja.Models
         public bool IsAttacking = false;
         private float attackTimer = 0f;
         private float attackDuration = 0.2f; // 0.2 seconden
+        public bool IsCrouching = false;
 
 
-        // heel belangrijk: zelfde scale gebruiken in draw én collision
+
+        // heel belangrijk: zelfde scale gebruiken in draw en collision
         private float scale = 0.5f;
         
 
@@ -112,9 +114,10 @@ namespace Platform_Game_Kenuja.Models
                 attackTimer = attackDuration;
             }
 
-            // In Persoon.Update():
-            if (Keyboard.GetState().IsKeyDown(Keys.Down))
-                Position.Y += 1; // Crouch effect
+            if (keyboard.IsKeyDown(Keys.Down))
+                IsCrouching = true;
+            else
+                IsCrouching = false;
 
             // zwaartekracht
             Velocity.Y += 900f * dt;
@@ -192,16 +195,23 @@ namespace Platform_Game_Kenuja.Models
 
         public void Draw(SpriteBatch spriteBatch)
         {
+
+            int drawHeight = IsCrouching ? Height / 2 : Height; // halve hoogte bij bukken
+            int sourceY = 0; // altijd vanaf boven tekenen
+
+            // Position aanpassen zodat sprite niet omhoog “springt”
+            Vector2 drawPosition = Position + new Vector2(0, Height * scale - drawHeight * scale);
+
             Rectangle sourceRect = new Rectangle(
                 currentFrame * Width,
-                0,
+                sourceY,
                 Width,
-                Height
+                drawHeight
             );
 
             spriteBatch.Draw(
                 Texture,
-                Position,
+                drawPosition,
                 sourceRect,
                 Color.White,
                 0f,

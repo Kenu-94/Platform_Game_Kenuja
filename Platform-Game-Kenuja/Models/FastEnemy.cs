@@ -13,7 +13,7 @@ namespace Platform_Game_Kenuja.Models
         {
             public float LeftBound, RightBound;
             private bool movingLeft = true;
-            private float speed = 120f; // sneller dan normale patrol
+            private float speed = 150f; // sneller dan normale patrol
 
             public FastEnemy(Texture2D texture, Vector2 startPos, float left, float right)
             {

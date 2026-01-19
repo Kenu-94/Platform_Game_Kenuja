@@ -192,7 +192,7 @@ namespace Platform_Game_Kenuja
                 {
                     _enemyDeathSound.Play();
                     SpawnExplosion(e.Position);
-                    _score += 2;
+                    _score += 4;
                     _world.Enemies.RemoveAt(i);
                 }
             }
