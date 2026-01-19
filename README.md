@@ -1,4 +1,4 @@
-# Platform Game - Kenuja
+# Platform Game - Kenuja Satheeskumar
 
 ## Over dit project
 Dit is een 2D platformgame gemaakt in C# met MonoGame. Het project voldoet volledig aan de examenvereisten en is ontwikkeld volgens de SOLID-principes.  
